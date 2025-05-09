@@ -64,24 +64,6 @@ app.get("/students", async (req, res) => {
   res.status(200).json(students);
 });
 
-//Fetch a student by ID
-app.get("/studentById", async (req, res) => {
-  let student = await studentModel.findById(req.query.id);
-  res.status(200).json(student);
-});
-
-//Fetch all doctors
-app.get("/doctors", async (req, res) => {
-  let doctors = await doctorModel.find();
-  res.status(200).json(doctors);
-});
-
-//Fetch a doctor by ID
-app.get("/doctorById", async (req, res) => {
-  let doctor = await doctorModel.findById(req.query.id);
-  res.status(200).json(doctor);
-});
-
 //5.Delete a student
 app.delete("/studentById", async (req, res) => {
   await studentModel.findByIdAndDelete(req.query.id);
